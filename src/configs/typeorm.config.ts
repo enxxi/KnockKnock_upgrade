@@ -1,11 +1,11 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-// export const typeORMConfig: TypeOrmModuleOptions = {
-//     // type: "database type",
-//     // host: "database host",
-//     // port: int(database port),
-//     // username: "database username",
-//     // password: "database password",
-//     // database: "database name",
-//     // entities: [database에서 사용하는 entity들,,,],
-//     // sychronize: false
-//   }
+export const typeORMConfig: TypeOrmModuleOptions = {
+    type: "postgres",
+    host: "knock-upgrade.chcibpobmzks.ap-northeast-2.rds.amazonaws.com",
+    port: 5432,
+    username: "postgres",
+    password: "alFftwUJXNqGKB8zZ6uw",
+    database: "knock-upgrade",
+    entities: ["dist/**/*.entity{.ts,.js}"],
+    synchronize: true
+  }
