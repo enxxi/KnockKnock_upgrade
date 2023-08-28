@@ -22,7 +22,8 @@ import { PostModule } from './post/post.module';
     FileModule,
     MessageModule,
     JoinModule,
-    PostModule],
+    PostModule,
+    ],
   // controllers: [AppController],
   // providers: [AppService],
 })
