@@ -1,6 +1,1 @@
-import {
-  CreateDateColumn,
-  DeleteDateColumn,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm'
+import { CreateDateColumn, DeleteDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';

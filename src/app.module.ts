@@ -16,7 +16,7 @@ import { PostModule } from './post/post.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeORMConfig),
-    UserModule,
+       UserModule,
     CardModule,
     ChatModule,
     CommentModule,
@@ -24,9 +24,8 @@ import { PostModule } from './post/post.module';
     MessageModule,
     JoinModule,
     PostModule,
-    ],
+  ],
   // controllers: [AppController],
   // providers: [AppService],
 })
 export class AppModule {}
-  
