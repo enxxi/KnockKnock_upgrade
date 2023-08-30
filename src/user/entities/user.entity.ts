@@ -39,6 +39,4 @@ export class User extends CommonEntity {
     @Column()
     introduce: string;
 
-    @Column()
-    is_deleted: string;
 }
