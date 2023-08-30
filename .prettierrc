@@ -3,11 +3,8 @@
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
-  "singleQuote": true,
   "trailingComma": "all",
-  "bracketSpacing": true,
-  "jsxBracketSameLine": true,
+  "singleQuote": true,
   "arrowParens": "avoid",
-  "vueIndentScriptAndStyle": false,
-  "endOfLine": "auto"
-}
+  "parser": "typescript"
+}   

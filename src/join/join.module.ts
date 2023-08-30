@@ -4,6 +4,6 @@ import { JoinService } from './join.service';
 
 @Module({
   controllers: [JoinController],
-  providers: [JoinService]
+  providers: [JoinService],
 })
 export class JoinModule {}

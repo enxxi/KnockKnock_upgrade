@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { CommonEntity } from 'src/common/common.entity';
+import { Column, Entity } from 'typeorm';
 
 @Entity('users')
-export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class User extends CommonEntity {
   @Column()
   email: string;
 
@@ -41,6 +39,4 @@ export class User {
   @Column()
   introduce: string;
 
-  @Column()
-  is_deleted: string;
 }
