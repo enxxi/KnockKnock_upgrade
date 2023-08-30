@@ -1,46 +1,42 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { CommonEntity } from 'src/common/common.entity';
 
 @Entity('users')
-export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class User extends CommonEntity {
+    @Column()
+    email: string;
 
-  @Column()
-  email: string;
+    @Column()
+    name: string;
 
-  @Column()
-  name: string;
+    @Column()
+    nickname: string;
 
-  @Column()
-  nickname: string;
+    @Column()
+    password: string;
 
-  @Column()
-  password: string;
+    @Column()
+    gender: string;
 
-  @Column()
-  gender: string;
+    @Column()
+    birthday: string;
 
-  @Column()
-  birthday: string;
+    @Column()
+    age: string;
 
-  @Column()
-  age: string;
+    @Column()
+    job: string;
 
-  @Column()
-  job: string;
+    @Column()
+    region: string;
 
-  @Column()
-  region: string;
+    @Column()
+    mbti: string;
 
-  @Column()
-  mbti: string;
+    @Column()
+    height: string;
 
-  @Column()
-  height: string;
+    @Column()
+    introduce: string;
 
-  @Column()
-  introduce: string;
-
-  @Column()
-  is_deleted: string;
 }
