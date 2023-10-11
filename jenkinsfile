@@ -22,7 +22,7 @@ pipeline { // 파이프라인의 시작을 알림
                 echo 'Clonning Repository'
 
                 git url: 'https://github.com/enxxi/KnockKnock_upgrade.git', // 프로젝트 레포지토리 url
-                    branch: 'main', // 레포지토리 브랜치 어디서 클론 해올 것인가?
+                    branch: 'dev', // 레포지토리 브랜치 어디서 클론 해올 것인가?
                     credentialsId: 'Jenkins' // 젠킨스 credentials에 작성한 ID
             }
 
@@ -143,7 +143,7 @@ pipeline { // 파이프라인의 시작을 알림
 
             dir ('./server'){ // 원래 떠있던 이미지 지우고(아무 이지미도 안띄워져 있으면 코드 삭제해야함)
                 sh '''
-                docker rm -f $(docker ps -aq) 
+               
                 docker run -p 80:80 -d server
                 '''
             }
