@@ -1,5 +1,7 @@
 import { CommonEntity } from 'src/common/common.entity';
-import { Column, Entity } from 'typeorm';
+import { Post } from 'src/post/entities/post.entity';
+import { User } from 'src/user/entities/user.entity';
+import { Column, Entity, ManyToOne } from 'typeorm';
 
 @Entity('joins')
 export class Join extends CommonEntity {
@@ -12,17 +14,14 @@ export class Join extends CommonEntity {
     nullable: false,
     default: 'pending',
   })
-  status: 'pending' | 'accepted' | 'rejected';
+  status: string;
 
   @Column({ type: 'int', nullable: false, default: 0 })
   matchingCount: number;
 
-  @Column({ type: 'boolean' })
-  statust: boolean;
+  @ManyToOne(() => User, user => user.joins)
+  user: User;
 
-  // @ManyToOne(() => User, (user) => user.participants)
-  // user: User;
-
-  // @ManyToOne(() => Post, (post) => post.participants)
-  // post: Post;
+  @ManyToOne(() => Post, post => post.joins)
+  post: Post;
 }
