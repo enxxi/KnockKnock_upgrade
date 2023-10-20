@@ -1,6 +1,10 @@
 import { CommonEntity } from 'src/common/common.entity';
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
+import { Comment } from '../../comment/entities/comment.entity';
+import { Join } from '../../join/entities/join.entity';
+import { Post } from '../../post/entities/post.entity';
 import { Mbti, Region } from '../types/user.enum';
+import { TagUser } from './tagUser.entity';
 
 @Entity('users')
 export class User extends CommonEntity {
@@ -43,5 +47,17 @@ export class User extends CommonEntity {
   introduce: string;
 
   @Column({ type: 'boolean', default: false, nullable: false })
-  isDelete: boolean;
+  isDeleted: boolean;
+
+  @OneToMany(() => Post, post => post.user)
+  posts: Post[];
+
+  @OneToMany(() => Join, join => join.user)
+  joins: Join[];
+
+  @OneToMany(() => Comment, comment => comment.user)
+  comments: Comment[];
+
+  @OneToMany(() => TagUser, tagUser => tagUser.user)
+  tagUsers: TagUser[];
 }

@@ -1,5 +1,8 @@
+import { Comment } from 'src/comment/entities/comment.entity';
 import { CommonEntity } from 'src/common/common.entity';
-import { Column, Entity } from 'typeorm';
+import { Join } from 'src/join/entities/join.entity';
+import { User } from 'src/user/entities/user.entity';
+import { Column, Entity, ManyToOne, OneToMany } from 'typeorm';
 
 @Entity('posts')
 export class Post extends CommonEntity {
@@ -33,14 +36,14 @@ export class Post extends CommonEntity {
   @Column({ type: 'int', nullable: false, default: 0 })
   recruitedF: number;
 
-  //   @OneToMany(() => Comment, (comment) => comment.post)
-  //   comments: Comment[];
+  @OneToMany(() => Comment, comment => comment.post)
+  comments: Comment[];
 
-  //   @ManyToOne(() => User, (user) => user.posts)
-  //   user: User;
+  @ManyToOne(() => User, user => user.posts)
+  user: User;
 
-  //   @OneToMany(() => Participant, (participant) => participant.post)
-  //   participants: Participant[];
+  @OneToMany(() => Join, join => join.post)
+  joins: Join[];
 
   //   @OneToMany(() => PostFile, (postFile) => postFile.post)
   //   postFiles: PostFile[];
