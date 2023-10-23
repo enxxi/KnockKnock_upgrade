@@ -15,7 +15,7 @@ export class Post extends CommonEntity {
   @Column({ type: 'varchar', length: 30, nullable: false })
   place: string;
 
-  @Column({ type: 'timestamp', length: 20, nullable: false })
+  @Column({ type: 'timestamp', nullable: false })
   meetingTime: Date;
 
   @Column({ type: 'varchar', length: 200, nullable: true })
